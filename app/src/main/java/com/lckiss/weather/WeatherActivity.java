@@ -9,6 +9,7 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
@@ -51,6 +52,7 @@ public class WeatherActivity extends AppCompatActivity {
     public DrawerLayout drawerLayout;
     private Button navButton;
 
+    private String weatherIdCache;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -86,23 +88,24 @@ public class WeatherActivity extends AppCompatActivity {
 
         String weatherString = prefs.getString("weather", null);
 
-        final String weatherId;
-
         if (weatherString != null) {
             //有缓存时直接解析天气数据
             Weather weather = Utility.handleWeatherResponse(weatherString);
-            weatherId=weather.basic.weatherId;
+            weatherIdCache=weather.basic.weatherId;
+            Log.i("myinfo_Zero:",weatherIdCache);
             showWeatherInfo(weather);
         } else {
             //无缓存时去服务器查询天气
-            weatherId = getIntent().getStringExtra("weather_id");
+            weatherIdCache = getIntent().getStringExtra("weather_id");
             weatherLayout.setVisibility(View.INVISIBLE);
-            requestWeather(weatherId);
+            requestWeather(weatherIdCache);
+            Log.i("myinfo_First:",weatherIdCache);
         }
         swipeRefresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
-                requestWeather(weatherId);
+                requestWeather(weatherIdCache);
+                Log.i("myinfo_Second:",weatherIdCache);
             }
         });
 
@@ -128,6 +131,8 @@ public class WeatherActivity extends AppCompatActivity {
      */
     public void requestWeather(final String weatherId) {
         String weatherUrl = "http://guolin.tech/api/weather?cityid=" + weatherId + "&key=1647cfa57ec54775a878e1d9745325c7";
+        weatherIdCache=weatherId;
+        Log.i("myinfo_E:",weatherId);
         HttpUtil.sendOkHttpRequest(weatherUrl, new Callback() {
             @Override
             public void onFailure(Call call, IOException e) {
@@ -153,6 +158,7 @@ public class WeatherActivity extends AppCompatActivity {
                             editor.putString("weather", responseText);
                             editor.apply();
                             showWeatherInfo(weather);
+                            Log.i("myinfo_E:",weatherId);
                         } else {
                             Toast.makeText(WeatherActivity.this, "获取天气信息失败", Toast.LENGTH_SHORT).show();
                         }

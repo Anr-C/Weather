@@ -2,9 +2,9 @@ package com.lckiss.weather;
 
 import android.app.Fragment;
 import android.app.ProgressDialog;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -88,13 +88,14 @@ public class ChooseAreaFragment extends Fragment {
                 }else if(currentLevel==LEVEL_COUNTY){
                     String weatherId= countyList.get(position).getWeatherId();
                    if(getActivity()instanceof MainActivity) {
-                       Intent intent = new Intent(getActivity(), WeatherActivity.class);
+                       Intent intent = new Intent(getContext(), WeatherActivity.class);
                        intent.putExtra("weather_id", weatherId);
                        startActivity(intent);
                        getActivity().finish();
                    }else if (getActivity()instanceof WeatherActivity){
                        WeatherActivity activity=(WeatherActivity)getActivity();
                        activity.drawerLayout.closeDrawers();
+                       activity.swipeRefresh.setRefreshing(true);
                        activity.requestWeather(weatherId);
                    }
                 }
@@ -189,7 +190,7 @@ public class ChooseAreaFragment extends Fragment {
                     @Override
                     public void run() {
                         closeProgressDialog();
-                        Toast.makeText(getActivity(), "加载失败", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getContext(), "加载失败", Toast.LENGTH_SHORT).show();
                     }
                 });
             }
