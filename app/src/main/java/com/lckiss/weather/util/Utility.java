@@ -1,10 +1,13 @@
 package com.lckiss.weather.util;
 
+import android.os.PowerManager;
 import android.text.TextUtils;
 
+import com.google.gson.Gson;
 import com.lckiss.weather.db.City;
 import com.lckiss.weather.db.County;
 import com.lckiss.weather.db.Province;
+import com.lckiss.weather.gson.Weather;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -90,4 +93,23 @@ public static boolean handleCitiesResponse(String response,int provinceId){
         return false;
 
     }
+
+
+    /**
+     * 将返回的JSON数据解析成Weather实体类
+     */
+
+    public static Weather handleWeatherResponse(String response){
+
+        try{
+            JSONObject jsonObject=new JSONObject(response);
+            JSONArray jsonArray=jsonObject.getJSONArray("HeWeather");
+            String weatherCOntent =jsonArray.getJSONObject(0).toString();
+            return new Gson().fromJson(weatherCOntent,Weather.class);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return null;
+    }
+
 }
