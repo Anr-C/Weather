@@ -1,0 +1,10 @@
+<litepal>
+    <dbname value="init_weater"/>
+    <version value="1"/>
+    <list>
+        <mapping class="com.lckiss.weather.db.Province"/>
+        <mapping class="com.lckiss.weather.db.City"/>
+        <mapping class="com.lckiss.weather.db.County"/>
+    </list>
+
+</litepal>
