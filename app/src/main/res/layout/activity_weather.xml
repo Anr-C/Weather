@@ -12,6 +12,7 @@
 
     <ImageView
         android:id="@+id/bing_pic_img"
+
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="centerCrop" />
@@ -34,12 +35,23 @@
             android:fitsSystemWindows="true"
             android:orientation="vertical">
 
-            <include layout="@layout/title" />
             <include layout="@layout/now" />
             <include layout="@layout/forecast" />
             <include layout="@layout/aqi" />
             <include layout="@layout/suggestion" />
+
+            <TextView
+                android:paddingLeft="5dp"
+                android:paddingBottom="2dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorWhite"
+                android:textSize="15sp"
+                android:textColor="@color/colorPrimary"
+                android:text="Lckiss.com Copyright ©2017"/>
         </LinearLayout>
+
+
     </ScrollView>
 
     </android.support.v4.widget.SwipeRefreshLayout>

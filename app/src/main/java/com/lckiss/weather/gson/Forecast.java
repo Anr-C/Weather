@@ -15,6 +15,9 @@ public String date;
     @SerializedName("cond")
     public More more;
 
+
+    public Wind wind;
+
     public class Temperature{
         public String max;
         public String min;
@@ -22,6 +25,14 @@ public String date;
     public  class More{
         @SerializedName("txt_d")
         public String info;
+
+        @SerializedName("code_d")
+        public String infoCode;
+    }
+
+    public class Wind{
+        public String dir;
+        public String sc;
     }
 
 }

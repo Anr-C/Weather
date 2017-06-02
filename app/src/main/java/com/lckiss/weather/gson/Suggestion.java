@@ -10,10 +10,18 @@ public class Suggestion {
 
     @SerializedName("comf")
     public  Comfort comfort;
+
     @SerializedName("cw")
     public CarWash carWash;
 
     public Sport sport;
+
+    @SerializedName("drsg")
+    public Dressing dress;
+
+    @SerializedName("flu")
+    public Cold cold;
+
     public class Comfort{
         @SerializedName("txt")
         public String info;
@@ -23,6 +31,15 @@ public class Suggestion {
         public String info;
     }
     public class Sport{
+        @SerializedName("txt")
+        public String info;
+    }
+    public class Dressing{
+        @SerializedName("txt")
+        public String info;
+    }
+
+    public class Cold{
         @SerializedName("txt")
         public String info;
     }

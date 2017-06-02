@@ -3,15 +3,33 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:orientation="horizontal">
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="15dp"
-        android:layout_marginTop="15dp"
         android:text="空气质量"
         android:textColor="#fff"
         android:textSize="20sp"/>
 
+        <View
+            android:layout_width="1dip"
+            android:layout_height="18dp"
+            android:layout_margin="2dp"
+            android:layout_gravity="center_vertical"
+            android:background="@android:color/white" />
+        <TextView
+            android:id="@+id/qlty_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:textColor="#f9f9f9"
+            android:textSize="20sp"/>
+
+    </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
