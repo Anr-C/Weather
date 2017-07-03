@@ -3,3 +3,8 @@
 模仿小米天气进行的界面美化,以及功能添加.
 
 学习作品,仅供参考.如有错误请指出
+
+## 一些截图
+![image](https://github.com/TIL-MICE/Weather/screenshot/1.png)
+![image](https://github.com/TIL-MICE/Weather/screenshot/2.png)
+![image](https://github.com/TIL-MICE/Weather/screenshot/3.png)
