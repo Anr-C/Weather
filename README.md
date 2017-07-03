@@ -5,6 +5,6 @@
 学习作品,仅供参考.如有错误请指出
 
 ## 一些截图
-<img src="https://github.com/TIL-MICE/Calculator/blob/master/screenshot/1.png" width="540px" height="960px">
-<img src="https://github.com/TIL-MICE/Calculator/blob/master/screenshot/2.png" width="540px" height="960px">
-<img src="https://github.com/TIL-MICE/Calculator/blob/master/screenshot/3.png" width="540px" height="960px">
+<img src="https://github.com/TIL-MICE/Weather/blob/master/screenshot/1.png" width="540px" height="960px">
+<img src="https://github.com/TIL-MICE/Weather/blob/master/screenshot/2.png" width="540px" height="960px">
+<img src="https://github.com/TIL-MICE/Weather/blob/master/screenshot/3.png" width="540px" height="960px">
