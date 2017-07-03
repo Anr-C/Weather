@@ -5,6 +5,6 @@
 学习作品,仅供参考.如有错误请指出
 
 ## 一些截图
-![image](https://github.com/TIL-MICE/Weather/screenshot/1.png)
-![image](https://github.com/TIL-MICE/Weather/screenshot/2.png)
-![image](https://github.com/TIL-MICE/Weather/screenshot/3.png)
+![image](https://github.com/TIL-MICE/Weather/blob/master/screenshot/1.png)
+![image](https://github.com/TIL-MICE/Weather/blob/master/screenshot/2.png)
+![image](https://github.com/TIL-MICE/Weather/blob/master/screenshot/3.png)
